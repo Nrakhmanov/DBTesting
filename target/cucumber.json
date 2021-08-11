@@ -3,42 +3,59 @@
     "line": 1,
     "elements": [
       {
-        "start_timestamp": "2021-08-11T01:31:35.774Z",
+        "start_timestamp": "2021-08-11T01:58:56.319Z",
         "before": [
           {
             "result": {
-              "duration": 1375965400,
+              "duration": 1375645900,
               "status": "passed"
             },
             "match": {
               "location": "com.vytrack.step_definitions.Hooks.setUp()"
             }
+          },
+          {
+            "result": {
+              "duration": 628687600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUpDB()"
+            }
           }
         ],
-        "line": 65,
+        "line": 86,
         "name": "Contact test with email",
         "description": "",
-        "id": "contacts-page;contact-test-with-email",
+        "id": "contacts-page;contact-test-with-email;;2",
         "after": [
           {
             "result": {
-              "duration": 207050700,
+              "duration": 184197900,
               "status": "passed"
             },
             "match": {
               "location": "com.vytrack.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
             }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown()"
+            }
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 8145066000,
+              "duration": 9980423800,
               "status": "passed"
             },
-            "line": 66,
+            "line": 78,
             "name": "the user logged in as \"sales manager\"",
             "match": {
               "arguments": [
@@ -53,10 +70,10 @@
           },
           {
             "result": {
-              "duration": 3304431100,
+              "duration": 3271015200,
               "status": "passed"
             },
-            "line": 67,
+            "line": 79,
             "name": "the user navigates to \"Customers\" \"Contacts\"",
             "match": {
               "arguments": [
@@ -75,10 +92,10 @@
           },
           {
             "result": {
-              "duration": 3073422800,
+              "duration": 3573077000,
               "status": "passed"
             },
-            "line": 68,
+            "line": 80,
             "name": "the user clicks the \"cherrylarmstrong@yahoo.com\" from contacts",
             "match": {
               "arguments": [
@@ -93,13 +110,19 @@
           },
           {
             "result": {
-              "duration": 4728623000,
+              "duration": 4623088600,
               "status": "passed"
             },
-            "line": 69,
-            "name": "the information should be same with database",
+            "line": 81,
+            "name": "the information for \"cherrylarmstrong@yahoo.com\" should be same with database",
             "match": {
-              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_information_should_be_same_with_database()"
+              "arguments": [
+                {
+                  "val": "\"cherrylarmstrong@yahoo.com\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_information_for_should_be_same_with_database(java.lang.String)"
             },
             "keyword": "Then "
           }
@@ -107,6 +130,277 @@
         "tags": [
           {
             "name": "@wip"
+          },
+          {
+            "name": "@db"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-11T01:59:20.012Z",
+        "before": [
+          {
+            "result": {
+              "duration": 817642000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUp()"
+            }
+          },
+          {
+            "result": {
+              "duration": 479108500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUpDB()"
+            }
+          }
+        ],
+        "line": 87,
+        "name": "Contact test with email",
+        "description": "",
+        "id": "contacts-page;contact-test-with-email;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 173655600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 9572453800,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "the user logged in as \"sales manager\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"sales manager\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_user_logged_in_as(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3257294900,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "the user navigates to \"Customers\" \"Contacts\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Customers\"",
+                  "offset": 22
+                },
+                {
+                  "val": "\"Contacts\"",
+                  "offset": 34
+                }
+              ],
+              "location": "com.vytrack.step_definitions.NavigationMenuStepDefs.the_user_navigates_to(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3061664500,
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "the user clicks the \"brandiankunding@mrazinc.com\" from contacts",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"brandiankunding@mrazinc.com\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_user_clicks_the_from_contacts(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4607364400,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "the information for \"brandiankunding@mrazinc.com\" should be same with database",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"brandiankunding@mrazinc.com\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_information_for_should_be_same_with_database(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          },
+          {
+            "name": "@db"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2021-08-11T01:59:41.986Z",
+        "before": [
+          {
+            "result": {
+              "duration": 824151800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUp()"
+            }
+          },
+          {
+            "result": {
+              "duration": 505061900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.setUpDB()"
+            }
+          }
+        ],
+        "line": 88,
+        "name": "Contact test with email",
+        "description": "",
+        "id": "contacts-page;contact-test-with-email;;4",
+        "after": [
+          {
+            "result": {
+              "duration": 189226700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown(io.cucumber.java.Scenario)"
+            }
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.vytrack.step_definitions.Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 9210863500,
+              "status": "passed"
+            },
+            "line": 78,
+            "name": "the user logged in as \"sales manager\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"sales manager\"",
+                  "offset": 22
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_user_logged_in_as(java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2193089800,
+              "status": "passed"
+            },
+            "line": 79,
+            "name": "the user navigates to \"Customers\" \"Contacts\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Customers\"",
+                  "offset": 22
+                },
+                {
+                  "val": "\"Contacts\"",
+                  "offset": 34
+                }
+              ],
+              "location": "com.vytrack.step_definitions.NavigationMenuStepDefs.the_user_navigates_to(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3059590800,
+              "status": "passed"
+            },
+            "line": 80,
+            "name": "the user clicks the \"rupertbailey@schiller-weber.info\" from contacts",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"rupertbailey@schiller-weber.info\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_user_clicks_the_from_contacts(java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4640971500,
+              "status": "passed"
+            },
+            "line": 81,
+            "name": "the information for \"rupertbailey@schiller-weber.info\" should be same with database",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"rupertbailey@schiller-weber.info\"",
+                  "offset": 20
+                }
+              ],
+              "location": "com.vytrack.step_definitions.ContactsStepDefs.the_information_for_should_be_same_with_database(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          },
+          {
+            "name": "@db"
           }
         ]
       }
