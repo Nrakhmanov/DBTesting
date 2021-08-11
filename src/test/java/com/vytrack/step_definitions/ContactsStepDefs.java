@@ -3,12 +3,14 @@ package com.vytrack.step_definitions;
 import com.vytrack.pages.*;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.DBUtils;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -63,6 +65,62 @@ public class ContactsStepDefs {
 
 
     }
+
+    @When("the user clicks the {string} from contacts")
+    public void the_user_clicks_the_from_contacts(String email) {
+
+        BrowserUtils.waitFor(3);
+        ContactsPage contactsPage = new ContactsPage();
+        contactsPage.getContactEmail(email).click();
+
+    }
+
+    @Then("the information should be same with database")
+    public void the_information_should_be_same_with_database() {
+
+        BrowserUtils.waitFor(4);
+        // get the info from UI
+
+        ContactInfoPage contactInfoPage = new ContactInfoPage();
+        String actualFullname = contactInfoPage.contactFullName.getText();
+        String actualEmail = contactInfoPage.email.getText();
+
+
+        System.out.println("actualFullname = " + actualFullname);
+        System.out.println("actualEmail = " + actualEmail);
+
+
+        //get info from Database
+
+        String query= "select concat(first_name,' ',last_name) \"full_name\", e.email \n" +
+                "from orocrm_contact c inner join orocrm_contact_email e \n" +
+                "on c.id = e.owner_id \n" +
+                "where e.email = 'cherrylarmstrong@yahoo.com'";
+
+
+        //create connection to env
+        DBUtils.createConnection();
+
+        //get the data in java collection
+
+        Map<String, Object> rowMap = DBUtils.getRowMap(query);
+        String expectedFullname = (String) rowMap.get("full_name");
+        String expectedEmail = (String) rowMap.get("email");
+
+        System.out.println("expectedFullname = " + expectedFullname);
+        System.out.println("expectedEmail = " + expectedEmail);
+
+        //close connection
+
+        DBUtils.destroy();
+
+        // assertion, compare UI vs DATABASE info
+
+        Assert.assertEquals(expectedFullname, actualFullname);
+        Assert.assertEquals(expectedEmail, actualEmail);
+
+    }
+
 
 
 
